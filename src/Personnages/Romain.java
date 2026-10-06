@@ -1,10 +1,11 @@
+package Personnages;
 
-public class Gaulois {
+public class Romain {
 
 	private String nom;
 	private int force;
 
-	public Gaulois(String nom, int force) {
+	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
 	}
@@ -21,7 +22,18 @@ public class Gaulois {
 
 	private String prendreParole() {
 
-		return "Le gaulois  " + nom + " : ";
+		return "Le romain " + nom + " : ";
+	}
+
+	public void recevoirCoup(int forceCoup) {
+		force = force - forceCoup;
+		if (force < 1) {
+			parler("J'abandonne !");
+
+		} else {
+			parler("Aïe");
+		}
+
 	}
 
 }
